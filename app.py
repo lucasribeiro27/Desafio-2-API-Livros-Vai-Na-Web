@@ -39,7 +39,7 @@ def home_page():
 def doar():
     dados = request.get_json()
 
-   
+    
     titulo = dados.get('titulo')
     categoria = dados.get('categoria')
     autor = dados.get('autor')
