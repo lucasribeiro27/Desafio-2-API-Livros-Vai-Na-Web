@@ -79,7 +79,7 @@ def listar_livros():
 
     return jsonify(livros_formatados)
 
-@app.route('/livros/<int:livros_id>', methods=['DELETE'])
+@app.route('/livros/<int:livro_id>', methods=['DELETE'])
 def deletar_livros(livro_id):
     with sqlite3.connect('database.db') as conn:
         cursor = conn.cursor()
@@ -88,7 +88,7 @@ def deletar_livros(livro_id):
     
     if cursor.rowcount == 0:
         return jsonify({"erro":"Livro não encontrado"}), 404
-    return jsonify({"mensagem": "livros excluido com sucesso!"}), 200
+    return jsonify({"mensagem": "livro excluido com sucesso!"}), 200
 
 if __name__ == '__main__':
   app.run(debug=True)
