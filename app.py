@@ -1,5 +1,5 @@
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 
 
@@ -29,8 +29,7 @@ init_db()
 
 @app.route('/') 
 def home_page():
-    
-    return '<h2>Minha pagina com Flask</h2>'
+    return render_template('index.html')
 
 
 
